@@ -1,5 +1,5 @@
 {% extends 'templates/base.html' %}
-
+{% load static %}
 {% block content %}
     <h1>Home page</h1>
     <hr>
@@ -25,5 +25,5 @@
         <a href="{% url 'login' %}">Login</a> |
         <a href="{% url 'register' %}">Register</a>
     {% endif %}
-    <script src="../users/static/js/app.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 {% endblock %}
