@@ -1,0 +1,29 @@
+{% extends 'templates/base.html' %}
+
+{% block content %}
+    <h1>Home page</h1>
+    <hr>
+    {% if user.is_authenticated %}
+
+
+        <input id="inputTxt"/>
+        <select id="unitDate">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input id="outputTxt"/>
+        <w>=</w>
+        <w id="resultTxt">resultTxt</w>
+        <p></p>
+        <button type="button" onclick="myFunction()">Result</button>
+        <hr>
+        <a href="{% url 'logout' %}">Logout</a>
+
+    {% else %}
+        <a href="{% url 'login' %}">Login</a> |
+        <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+    <script src="../users/static/js/app.js"></script>
+{% endblock %}
